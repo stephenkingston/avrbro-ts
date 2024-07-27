@@ -8,7 +8,7 @@
     <title>Avrbro - Sample</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     <script type="module">
-      import avrbro from './../../dist/avrbro.m.js'
+      import avrbro from './../../dist/avrbro-ts.m.js'
 
       // reference to .hex buffer
       let hexBuffer;
@@ -21,7 +21,7 @@
           }]
         });
         if (serial) {
-          // avalaible boards are listed in https://github.com/kaelhem/avrbro/tree/master/src/boards.js
+          // available boards are listed in https://github.com/stephenkingston/avrbro-ts/tree/master/src/boards.ts
           const options = {
             boardName: 'nano',
             debug: true

@@ -78,7 +78,7 @@ Open serial connection with device. _Once called, the browser will open a dedica
 **Params**
 
 - options `object`
-  - baudRate `Number` - defaults to `57600` (*which is ok for nano boards with old bootloader. You can check [here](https://github.com/kaelhem/avrbro/blob/master/src/boards.js) to find the correct baudRate for yours...*)
+  - baudRate `Number` - defaults to `57600` (*which is ok for nano boards with old bootloader. You can check [here](https://github.com/stephenkingston/avrbro-ts/blob/master/src/boards.ts) to find the correct baudRate for yours...*)
   - filters `Array` - a list of objects containing vendor and product IDs used to search for attached devices. Filters contain the following values:
     - usbVendorId `String` - an unsigned short integer that identifies a USB device vendor.
     - usbProductId `String` - an unsigned short integer that identifies a USB device.
@@ -109,9 +109,9 @@ Use Intel HEX file format to parse given data and prepare buffer for upload.
 
 **Params**
 
-- data `Object` - string in ASCII format or Buffer
+- data `Object` - string in ASCII format or Uint8Array
 
-**Returns**: `Buffer`
+**Returns**: `Uint8Array`
 
 ---
 
@@ -121,8 +121,8 @@ Flash the device connected on the given serial port with the given .hex file buf
 
 **Params**
 
-- data `Object` - string in ASCII format or Buffer Object
-- hexBuffer `Buffer` - the .hex buffer returned by the _parseHex_ function
+- data `Object` - string in ASCII format or Uint8Array Object
+- hexBuffer `Uint8Array` - the .hex buffer returned by the _parseHex_ function
 - options `Object`
   - boardName `String` - Name of the target board (_check `src/board.js` to find available names_)
   - debug `Boolean` - Allow to display logs during flash process
@@ -145,7 +145,7 @@ Reset board with cycle DTR.
 
 ## Contributing
 
-Contributions in any form are welcome! If you find a bug, please [file an issue.](https://github.com/kaelhem/avrbro/issues)
+Contributions in any form are welcome! If you find a bug, please [file an issue.](https://github.com/stephenkingston/avrbro-ts/issues)
 
 ## License
 

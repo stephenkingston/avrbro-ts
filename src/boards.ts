@@ -2,7 +2,28 @@
 * Grabbed on https://github.com/noopkat/avrgirl-arduino
 */
 
-export const boards = [
+export interface Board {
+  name: string;
+  baud: number;
+  signature: number[];
+  pageSize?: number;
+  numPages?: number;
+  timeout?: number;
+  productId?: string[];
+  productPage: string;
+  protocol: string;
+  aliases?: string[];
+  delay1?: number;
+  delay2?: number;
+  stabDelay?: number;
+  cmdexeDelay?: number;
+  synchLoops?: number;
+  byteDelay?: number;
+  pollValue?: number;
+  pollIndex?: number;
+}
+
+export const boards: Board[] = [
   {
     name: 'uno',
     baud: 115200,
@@ -288,18 +309,19 @@ export const boards = [
     productPage: 'http://www.spark-concepts.com/cnc-xpro-v4-controller/',
     protocol: 'stk500v1'
   },
-]
+];
 
 /**
  * Get a board object by name
  */
-export const getBoard = (name) => {
-  const filtered = boards.filter(b => (b.name === name || (b.aliases && b.aliases.indexOf(name) !== -1)))
+export const getBoard = (name: string): Board => {
+  const filtered = boards.filter(b => (b.name === name || (b.aliases && b.aliases.indexOf(name) !== -1)));
   if (!filtered || filtered.length === 0) {
-    throw new Error(`no board named '${name}' was found!`)
+    throw new Error(`no board named '${name}' was found!`);
   }
   if (filtered.length > 1) {
-    throw new Error(`several boards named '${name}' were found!`)
+    throw new Error(`several boards named '${name}' were found!`);
   }
-  return filtered[0]
-}
+  return filtered[0];
+};
+

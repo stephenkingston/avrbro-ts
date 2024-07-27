@@ -1,7 +1,4 @@
-"use strict";
 var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __propIsEnum = Object.prototype.propertyIsEnumerable;
@@ -33,15 +30,6 @@ var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var __async = (__this, __arguments, generator) => {
   return new Promise((resolve, reject) => {
     var fulfilled = (value) => {
@@ -62,23 +50,6 @@ var __async = (__this, __arguments, generator) => {
     step((generator = generator.apply(__this, __arguments)).next());
   });
 };
-
-// src/avrbro.ts
-var avrbro_exports = {};
-__export(avrbro_exports, {
-  Resp_STK_INSYNC: () => Resp_STK_INSYNC,
-  Resp_STK_OK: () => Resp_STK_OK,
-  avrbro: () => avrbro,
-  boards: () => boards,
-  bootload: () => bootload,
-  default: () => avrbro_default,
-  getBoard: () => getBoard,
-  parseIntelHex: () => parseIntelHex,
-  receiveData: () => receiveData,
-  sendCommand: () => sendCommand,
-  sync: () => sync
-});
-module.exports = __toCommonJS(avrbro_exports);
 
 // src/boards.ts
 var boards_exports = {};
@@ -955,17 +926,17 @@ var avrbro = {
   boardsHelper: boards_exports
 };
 var avrbro_default = avrbro;
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
+export {
   Resp_STK_INSYNC,
   Resp_STK_OK,
   avrbro,
   boards,
   bootload,
+  avrbro_default as default,
   getBoard,
   parseIntelHex,
   receiveData,
   sendCommand,
   sync
-});
-//# sourceMappingURL=avrbro.js.map
+};
+//# sourceMappingURL=avrbro.mjs.map
